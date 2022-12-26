@@ -13,15 +13,16 @@ export class EInfoComponent implements OnInit {
   infoRecvd2 : string[] = []
   infoRecvd3 : string[] = []
 
-  constructor(private dService: DataService) { }
+  constructor(private dService: DataService) {
+    this.infoRecvd1 = this.dService.getInfo1()
+    this.infoRecvd2 = this.dService.getInfo2()
+    this.infoRecvd3 = this.dService.getInfo3()
+  }
 
   ngOnInit(): void {
   }
 
   getInfoFromService1() {
-    this.infoRecvd1 = this.dService.getInfo1()
-    this.infoRecvd2 = this.dService.getInfo2()
-    this.infoRecvd3 = this.dService.getInfo3()
   }
   getInfoFromService2() {}
   getInfoFromService3() {}
